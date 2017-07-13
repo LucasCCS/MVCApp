@@ -8,20 +8,20 @@
      */
     class App
     {
-        #Default Controller
+        //Default Controller
         protected $controller = "home";
-        #Default Method
+        //Default Method
         protected $method = "index";
-        #Parametros
+        //Parametros
         protected $params = [];
-        #Controller Object
+        //Controller Object
         protected $controllerObject;
         /**
          * Diretrizes para inicialização da aplicação
          */
         public function initialize()
         {
-            #Define todos os parametros dispostos na url do browser.
+            //Define todos os parametros dispostos na url do browser.
             $url = $this->getUrl();
             /**
              * Verifica e define o controlador especificado através do browser,
@@ -41,7 +41,7 @@
                 $this->method = $url[1];
                 unset($url[1]);
             }
-            #Define o nome do controlador
+            //Define o nome do controlador
             $controllerName = 'Application\Controller\\'.ucwords($this->controller).'Controller';
             /**
              * Verifica se o controlador (classe) existe, caso exista
@@ -65,11 +65,11 @@
                 if (isset($url)) {
                     $this->params = array_values($url);
                 }
-                #Chama a função e envia os parametros definidos anteriormente
+                //Chama a função e envia os parametros definidos anteriormente
                 call_user_func_array(array($this->controllerObject,$this->method),$this->params);
             }
         }
-        /** 
+        /**
          * GetUrl
          */
         private function getUrl()

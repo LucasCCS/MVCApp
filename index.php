@@ -1,7 +1,6 @@
 <?php
-    #Autoload Composer
+    //Autoload
     require_once 'vendor/autoload.php';
-    use Core\App;
-    #Cria o objeto e inicia a aplicação
-    $app = new App();
+    //Cria o objeto e inicia a aplicação
+    $app = new Core\App();
     $app->initialize();
